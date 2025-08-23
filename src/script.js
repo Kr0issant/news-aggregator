@@ -14,7 +14,7 @@ const resultsNum = document.getElementById("results-num");
 const container = document.querySelector(".article-container");
 
 // --- Article Structure ---
-const article_template =`<article>
+const article_template = `<article>
                 <div class="info">
                     <a class="article-title" href="{URL}" target="_blank">{TITLE}</a>
                     <div class="article-description">{DESC}</div>
@@ -28,31 +28,31 @@ const article_template =`<article>
 
 // --- Fetch API Key from Localhost 3000 ---
 fetch("http://localhost:3000/api")
-.then(response => {
-    if (!response.ok) { throw new Error("Network response was not ok " + response.statusText); }
+    .then(response => {
+        if (!response.ok) { throw new Error("Network response was not ok " + response.statusText); }
 
-    return response.json();
-})
-.then(data => {
-    apiKey = data.apiKey;
-})
-.catch(error => {
-    console.error("Fetch error: ", error);
-});
+        return response.json();
+    })
+    .then(data => {
+        apiKey = data.apiKey;
+    })
+    .catch(error => {
+        console.error("Fetch error: ", error);
+    });
 
 // --- Handle Submission ---
 function submit() {
     event.preventDefault();
     container.innerHTML = "";
 
-    let queries = {"apikey": apiKey, "max": resultsNum.value, "lang": "en"};
-    let endpoint = category.value === "All" ? "search" : "top-headlines"; 
+    let queries = { "apikey": apiKey, "max": resultsNum.value, "lang": "en" };
+    let endpoint = category.value === "All" ? "search" : "top-headlines";
     let query;
     let element;
 
     if (category.value !== "All") { queries["category"] = category.value.toLowerCase(); }
 
-    if (searchBar.value === ""){
+    if (searchBar.value === "") {
         if (category.value === "All") {
             queries["category"] = "general";
             endpoint = "top-headlines";
@@ -72,24 +72,24 @@ function submit() {
     console.log(query);
 
     fetch(query)
-    .then(response => {
-        if (!response.ok) { throw new Error("Network response was not ok " + response.statusText); }
-        return response.json();
-    })
-    .then(data => {
-        data.articles.forEach(article => {
-            element = article_template.replace("{TITLE}", article.title);
-            element = element.replace("{URL}", article.url);
-            element = element.replace("{DESC}", article.description);
-            element = element.replace("{SOURCE_NAME}", article.source.name);
-            element = element.replace("{SOURCE_URL}", article.source.url);
-            element = element.replace("{DATE}", new Date(article.publishedAt).toLocaleDateString('en-GB'));
-            element = element.replace("{IMG}", article.image);
+        .then(response => {
+            if (!response.ok) { throw new Error("Network response was not ok " + response.statusText); }
+            return response.json();
+        })
+        .then(data => {
+            data.articles.forEach(article => {
+                element = article_template.replace("{TITLE}", article.title);
+                element = element.replace("{URL}", article.url);
+                element = element.replace("{DESC}", article.description);
+                element = element.replace("{SOURCE_NAME}", article.source.name);
+                element = element.replace("{SOURCE_URL}", article.source.url);
+                element = element.replace("{DATE}", new Date(article.publishedAt).toLocaleDateString('en-GB'));
+                element = element.replace("{IMG}", article.image);
 
-            container.innerHTML += element;
+                container.innerHTML += element;
+            });
+        })
+        .catch(error => {
+            console.error("Fetch error: ", error);
         });
-    })
-    .catch(error => {
-        console.error("Fetch error: ", error);
-    });
 }
