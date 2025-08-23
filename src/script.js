@@ -11,6 +11,7 @@ const location = document.getElementById("location");
 const dateFrom = document.getElementById("date-from");
 const dateTo = document.getElementById("date-to");
 const resultsNum = document.getElementById("results-num");
+const sort = document.getElementById("sort");
 const container = document.querySelector(".article-container");
 
 // --- Article Structure ---
@@ -62,6 +63,7 @@ function submit() {
     if (location.value !== "") { queries["country"] = parser.country(location.value); }
     if (dateFrom.value !== "") { queries["from"] = parser.date(dateFrom.value); }
     if (dateTo.value !== "") { queries["to"] = parser.date(dateTo.value); }
+    if (endpoint === "search") { queries["sort"] = (sort.value === "Relevance" ? "relevance" : "publishedAt"); }
 
     query = `https://gnews.io/api/v4/${endpoint}?`;  // Use search or top-headlines endpoint based on category input field
 

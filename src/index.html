@@ -22,7 +22,7 @@
             </div>
 
             <nav class="filter-section">
-                <select class="filter-tag" id="category">
+                <select class="filter-tag grow-2" id="category">
                     <option>All</option>
                     <option>Sports</option>
                     <option>Technology</option>
@@ -33,10 +33,27 @@
                     <option>Business</option>
                     <option>Health</option>
                 </select>
-                <input class="filter-tag" id="location" placeholder="Location">
-                <input class="filter-tag date" id="date-from" type="date" placeholder="From">
-                <input class="filter-tag date" id="date-to" type="date">
-                <input class="filter-tag results" id="results-num" type="number" max="100" min="1" value="15">
+                <input class="filter-tag grow-2" id="location" placeholder="Location">
+
+                <div class="tooltip-container">
+                    <input class="filter-tag date grow-1" id="date-from" type="date" placeholder="From">
+                    <span class="tooltip-text">From</span>
+                </div>
+                <div class="tooltip-container">
+                    <input class="filter-tag date grow-1" id="date-to" type="date">
+                    <span class="tooltip-text">To</span>
+                </div>
+                <div class="tooltip-container">
+                    <input class="filter-tag results grow-1" id="results-num" type="number" max="100" min="1" value="15">
+                    <span class="tooltip-text">Max Results</span>
+                </div>
+                <div class="tooltip-container">
+                    <select class="filter-tag grow-1" id="sort">
+                        <option>Relevance</option>
+                        <option>Date</option>
+                    </select>
+                    <span class="tooltip-text">Sort</span>
+                </div>
             </nav>
         </form>
 

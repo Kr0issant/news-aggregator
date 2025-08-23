@@ -47,6 +47,7 @@ hero {
     text-transform: uppercase;
     letter-spacing: -0.05em;
     margin-bottom: 1rem;
+    user-select: none;
 }
 
 .highlight {
@@ -111,7 +112,6 @@ hero {
 .filter-tag {
     border-radius: 8px;
     height: 48px;
-    flex-grow: 2;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     color: #3A506B;
@@ -123,12 +123,11 @@ hero {
     opacity: 0.9;
 }
 
-.filter-tag.date {
-    flex-grow: 1 !important;
+.grow-1 {
+    flex: 1
 }
-
-.filter-tag.results {
-    flex-grow: 1 I !important;
+.grow-2 {
+    flex: 2;
 }
 
 /* --- Blur Transparent -- */
@@ -241,4 +240,28 @@ a:hover::after {
 *::selection {
     background-color: rgba(149, 252, 187, 0.8);
     color: #0B132B;
+}
+
+/* --- TOOLTIPS --- */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 1;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
 }
