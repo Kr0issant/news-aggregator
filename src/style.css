@@ -9,7 +9,7 @@
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #4C769C;
-    color: #0B132B;
+    color: #4C769C;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -66,50 +66,80 @@ body {
 }
 
 .filter-tag {
-    background-color: #84A9C0;
+    background-color: #F0F4F8;
     border-radius: 8px;
     height: 48px;
     flex-grow: 1;
     flex-basis: 180px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #3A506B;
 }
 
-.filter-tag:nth-child(4) {
+.filter-tag::placeholder{
+    color: #84A9C0;
+    opacity: 0.9;
+}
+
+.filter-tag.date {
+    flex-grow: 0.5;
+    flex-shrink: 0;
+    flex-basis: 20px;
+}
+.filter-tag.results {
     flex-grow: 0.5;
     flex-shrink: 0;
     flex-basis: 60px;
 }
 
 /* --- Cards --- */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.article-container {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
 }
 
-.card {
-    background-color: #84A9C0;
+article {
+    background-color: #a3cce6;
     border-radius: 12px;
     padding: 1.5rem;
-    text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
 }
 
-.card-title {
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.article-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #0B132B;
+    color: #FDF5AA;
+    text-decoration: none;
 }
 
-.card-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: #FFFFFF;
-}
-
-.card-description {
+.article-description {
     font-size: 1rem;
     color: #0B132B;
-    overflow-wrap: break-word;
+}
+
+.source-date {
+    color: #4f3b7f;
+}
+
+.article-source {
+    font-weight: 500;
+    color: #4f3b7f;
+    text-decoration: none;
+}
+
+.article-image {
+    min-width: 16vw;
+    max-width: 16vw;
+    aspect-ratio: 16 / 9;
+    background-color: #F0F4F8;
+    border-radius: 5px;
 }
