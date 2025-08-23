@@ -28,6 +28,34 @@ body {
     max-width: 80vw;
 }
 
+/* --- HERO SECTION --- */
+hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+.hero-title {
+    color: white;
+    font-size: 4rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    margin-bottom: 1rem;
+}
+.highlight {
+    display: block;
+    color: rgb(149, 252, 187);
+}
+.hero-tagline {
+    color: #edeeef;
+    font-size: 1.25rem;
+    max-width: 42rem;
+}
+
 /* --- Search Section --- */
 .search-section {
     display: flex;
@@ -51,9 +79,9 @@ body {
 }
 
 .search-button {
-    border: none;
+    border: 3px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
-    background-color: rgba(253, 245, 170, 0.6);
+    background-color: rgba(149, 252, 187, 0.6);
     color: #0B132B;
     font-weight: 700;
     padding: 0.75rem 2rem;
@@ -61,11 +89,11 @@ body {
     font-size: 1rem;
     letter-spacing: 1px;
     flex-shrink: 0;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s,;
 }
 
 .search-button:hover {
-    background-color: rgba(239, 231, 156, 0.9);
+    background-color: rgb(149, 252, 187);
 }
 
 /* --- Filter Section --- */
@@ -87,7 +115,7 @@ body {
     transition: background-color 0.2s;
 }
 
-.filter-tag::placeholder{
+.filter-tag::placeholder {
     color: #84A9C0;
     opacity: 0.9;
 }
@@ -97,6 +125,7 @@ body {
     flex-shrink: 0;
     flex-basis: 20px;
 }
+
 .filter-tag.results {
     flex-grow: 0.5;
     flex-shrink: 0;
@@ -104,7 +133,8 @@ body {
 }
 
 /* --- Blur Transparent -- */
-input, select {
+input,
+select {
     background-color: rgba(240, 244, 248, 0.5);
 }
 
@@ -112,7 +142,8 @@ select option {
     background-color: rgba(240, 244, 248, 0.5);
 }
 
-input:hover, select:hover {
+input:hover,
+select:hover {
     background-color: rgba(240, 244, 248, 0.6);
 }
 
@@ -137,7 +168,7 @@ article {
     gap: 1rem;
     align-items: flex-start;
     box-shadow: -5px 5px 10px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s,background-color 0.5s;
+    transition: transform 0.5s, background-color 0.5s;
 }
 
 article:hover {
@@ -156,22 +187,22 @@ article:hover {
 .article-title {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #FDF5AA;
+    color: rgb(149, 252, 187);
     text-decoration: none;
 }
 
 .article-description {
     font-size: 1rem;
-    color: #0B132B;
+    color: #edeeef;
 }
 
 .source-date {
-    color: #463290;
+    color: rgba(149, 252, 187, 0.8);
 }
 
 .article-source {
     font-weight: 500;
-    color: #463290;
+    color: rgba(149, 252, 187, 0.8);
     text-decoration: none;
 }
 
