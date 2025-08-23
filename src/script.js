@@ -53,7 +53,10 @@ function submit() {
     if (category.value !== "All") { queries["category"] = category.value.toLowerCase(); }
 
     if (searchBar.value === ""){
-        if (category.value === "All") { queries["category"] = "general"; endpoint = "top-headlines"; }
+        if (category.value === "All") {
+            queries["category"] = "general";
+            endpoint = "top-headlines";
+        }
     } else { queries["q"] = searchBar.value; }
 
     if (location.value !== "") { queries["country"] = parser(location.value); }
