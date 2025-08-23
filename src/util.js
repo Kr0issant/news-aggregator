@@ -33,10 +33,15 @@ const country_db = {
     "usa": "us"
 }
 
-export function parser(country) {
-    country = country.toLowerCase();
-
-    if (Object.values(country_db).includes(country)) { return country; }
-    if (Object.keys(country_db).includes(country)) { return country_db[country]; }
-    return "in";
+export class parser {
+    static country(country) {
+        country = country.toLowerCase();
+    
+        if (Object.values(country_db).includes(country)) { return country; }
+        if (Object.keys(country_db).includes(country)) { return country_db[country]; }
+        return "in";
+    }
+    static date(date) {
+        return new Date(date).toISOString();
+    }
 }

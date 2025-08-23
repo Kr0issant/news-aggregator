@@ -59,9 +59,9 @@ function submit() {
         }
     } else { queries["q"] = searchBar.value; }
 
-    if (location.value !== "") { queries["country"] = parser(location.value); }
-    if (dateFrom.value !== "") { queries["from"] = dateFrom.value; }
-    if (dateTo.value !== "") { queries["to"] = dateTo.value; }
+    if (location.value !== "") { queries["country"] = parser.country(location.value); }
+    if (dateFrom.value !== "") { queries["from"] = parser.date(dateFrom.value); }
+    if (dateTo.value !== "") { queries["to"] = parser.date(dateTo.value); }
 
     query = `https://gnews.io/api/v4/${endpoint}?`;  // Use search or top-headlines endpoint based on category input field
 
