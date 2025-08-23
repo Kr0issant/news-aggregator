@@ -43,24 +43,24 @@ fetch("http://localhost:3000/api")
 // --- Handle Submission ---
 function submit() {
     event.preventDefault();
-
     container.innerHTML = "";
 
     let queries = {"apikey": apiKey, "max": resultsNum.value, "lang": "en"};
+    let endpoint = category.value === "All" ? "search" : "top-headlines"; 
     let query;
     let element;
 
     if (category.value !== "All") { queries["category"] = category.value.toLowerCase(); }
 
     if (searchBar.value === ""){
-        if (category.value === "All") { alert("Cannot have an empty search field."); return; }
+        if (category.value === "All") { queries["category"] = "general"; endpoint = "top-headlines"; }
     } else { queries["q"] = searchBar.value; }
 
     if (location.value !== "") { queries["country"] = parser(location.value); }
     if (dateFrom.value !== "") { queries["from"] = dateFrom.value; }
     if (dateTo.value !== "") { queries["to"] = dateTo.value; }
 
-    query = `https://gnews.io/api/v4/${category.value === "All" ? "search" : "top-headlines"}?`;  // Use search or top-headlines endpoint based on category input field
+    query = `https://gnews.io/api/v4/${endpoint}?`;  // Use search or top-headlines endpoint based on category input field
 
     for (const key in queries) {
         query += `${key}=${encodeURIComponent(queries[key])}&`;
