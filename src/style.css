@@ -20,7 +20,7 @@ body {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(6px);
     overscroll-behavior: none;
 }
 
@@ -38,6 +38,7 @@ hero {
     text-align: center;
     padding: 1rem;
 }
+
 .hero-title {
     color: white;
     font-size: 4rem;
@@ -47,10 +48,12 @@ hero {
     letter-spacing: -0.05em;
     margin-bottom: 1rem;
 }
+
 .highlight {
     display: block;
     color: rgb(149, 252, 187);
 }
+
 .hero-tagline {
     color: #edeeef;
     font-size: 1.25rem;
@@ -90,7 +93,7 @@ hero {
     font-size: 1rem;
     letter-spacing: 1px;
     flex-shrink: 0;
-    transition: background-color 0.2s,;
+    transition: background-color 0.2s, ;
 }
 
 .search-button:hover {
@@ -216,4 +219,31 @@ article:hover {
     background-color: rgba(240, 244, 248, 0.5);
     border-radius: 5px;
     border: 3px solid white;
+}
+
+/* --- LINK HOVER EFFECTS --- */
+a {
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: rgba(149, 252, 187, 0.8);
+    border-radius: 5px;
+    transition: width .8s;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* --- CUSTOM TEXT SELECTION --- */
+*::selection {
+    background-color: rgba(149, 252, 187, 0.8);
+    color: #0B132B;
 }
