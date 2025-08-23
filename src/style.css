@@ -21,6 +21,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     backdrop-filter: blur(5px);
+    overscroll-behavior: none;
 }
 
 .container {
