@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Aggregator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <header class="search-section">
+                <input type="search" id="search-bar" class="search-bar" placeholder="Search content...">
+                <button type="submit" id="submit-btn" class="search-button">SEARCH</button>
+            </header>
+    
+            <nav class="filter-section">
+                <select class="filter-tag">
+                    <option>All</option>
+                    <option>Sports</option>
+                    <option>Technology</option>
+                    <option>Politics</option>
+                    <option>Gaming</option>
+                    <option>Science</option>
+                    <option>Education</option>
+                    <option>Entertainment</option>
+                    <option>Crime</option>
+                    <option>Business</option>
+                    <option>Health</option>
+                    <option>Food</option>
+                    <option>Fashion</option>
+                </select>
+                <input class="filter-tag">
+                <input class="filter-tag">
+                <input class="filter-tag" type="number" max="100" min="1" value="15">
+            </nav>
+        </form>
+
+        <main class="card-grid">
+            <article class="card">
+                <div class="card-title">Title</div>
+                <div class="card-image"></div>
+                <div class="card-description">Description</div>
+            </article>
+            <article class="card">
+                <div class="card-title">Title</div>
+                <div class="card-image"></div>
+                <div class="card-description">Description</div>
+            </article>
+            <article class="card">
+                <div class="card-title">Title</div>
+                <div class="card-image"></div>
+                <div class="card-description">Description</div>
+            </article>
+        </main>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
