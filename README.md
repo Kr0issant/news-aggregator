@@ -15,7 +15,7 @@ A clean and simple web application for browsing and searching news articles from
 
 ## API Key Management
 
-To protect the news API key, it is not exposed on the frontend. Instead, a lightweight Express.js server is used to serve the key from a local `.env` file via a dedicated API endpoint. The client-side JavaScript fetches the key from this endpoint, ensuring it remains secure and is not committed to public repositories.
+To protect the GNews API key, it is not exposed on the frontend. Instead, a lightweight Express.js server is used to serve the key from a local `.env` file via a dedicated API endpoint. The client-side JavaScript fetches the key from this endpoint, ensuring it remains secure and is not committed to public repositories.
 
 ## Getting Started
 
@@ -28,9 +28,9 @@ To protect the news API key, it is not exposed on the frontend. Instead, a light
    cd news-aggregator
    npm install
    ```
-3. **Create a `.env` file and add your API key:**
+3. **Create a `.env` file and add your GNews API key:**
    ```
-   apiKey=your_news_api_key_here
+   apiKey=your_gnews_api_key_here
    ```
 4. **Start the server:**
    ```bash
