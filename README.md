@@ -28,7 +28,7 @@ To protect the news API key, it is not exposed on the frontend. Instead, a light
    cd news-aggregator
    npm install
    ```
-3. **Create a `.env` file in the `server` directory and add your API key:**
+3. **Create a `.env` file and add your API key:**
    ```
    apiKey=your_news_api_key_here
    ```
