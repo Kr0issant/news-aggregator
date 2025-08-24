@@ -21,16 +21,16 @@ To protect the news API key, it is not exposed on the frontend. Instead, a light
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/Kr0issant/news-aggregator.git](https://github.com/Kr0issant/news-aggregator.git)
+   git clone https://github.com/Kr0issant/news-aggregator.git
    ```
-2. **Navigate to the server directory and install dependencies:**
+2. **Navigate to the project directory and install dependencies:**
    ```bash
-   cd news-aggregator/server
+   cd news-aggregator
    npm install
    ```
 3. **Create a `.env` file in the `server` directory and add your API key:**
    ```
-   API_KEY=your_news_api_key_here
+   apiKey=your_news_api_key_here
    ```
 4. **Start the server:**
    ```bash
