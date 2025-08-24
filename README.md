@@ -36,7 +36,7 @@ To protect the news API key, it is not exposed on the frontend. Instead, a light
    ```bash
    node server.js
    ```
-5. **Open `index.html` in the root directory in your browser to use the app.**
+5. **Open `index.html` in the src directory in your browser to use the app.**
 
 ## Hackathon Project
 
