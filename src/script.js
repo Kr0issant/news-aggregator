@@ -3,7 +3,26 @@ import { parser } from "./util.js";
 var apiKey;
 
 const submitBtn = document.getElementById("submit-btn");
-submitBtn.addEventListener("click", submit);
+submitBtn.addEventListener("click", () => {
+    page = 1;
+    submit();
+});
+
+const nextPageBtn = document.querySelector(".next-page-btn");
+nextPageBtn.addEventListener("click", () => {
+    if (articlesNum / 10 > page) {
+        page++;
+        submit();
+    }
+});
+
+const prevPageBtn = document.querySelector(".prev-page-btn");
+prevPageBtn.addEventListener("click", () => {
+    if (page > 1) {
+        page--;
+        submit();
+    }
+})
 
 const searchBar = document.getElementById("search-bar");
 const category = document.getElementById("category");
@@ -13,6 +32,9 @@ const dateTo = document.getElementById("date-to");
 const resultsNum = document.getElementById("results-num");
 const sort = document.getElementById("sort");
 const container = document.querySelector(".article-container");
+
+var articlesNum = 0;
+var page = 1;
 
 // --- Article Structure ---
 const article_template = `<article>
@@ -46,7 +68,7 @@ function submit() {
     event.preventDefault();
     container.innerHTML = "";
 
-    let queries = { "apikey": apiKey, "max": resultsNum.value, "lang": "en" };
+    let queries = { "apikey": apiKey, "max": resultsNum.value, "lang": "en", "page": page };
     let endpoint = category.value === "All" ? "search" : "top-headlines";
     let query;
     let element;
@@ -79,6 +101,10 @@ function submit() {
             return response.json();
         })
         .then(data => {
+            articlesNum = data.totalArticles;
+            if (articlesNum > 10) { nextPageBtn.classList.remove("hidden"); prevPageBtn.classList.remove("hidden"); }
+            else { nextPageBtn.classList.add("hidden"); prevPageBtn.classList.add("hidden"); }
+
             data.articles.forEach(article => {
                 element = article_template.replace("{TITLE}", article.title);
                 element = element.replace("{URL}", article.url);

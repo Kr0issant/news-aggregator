@@ -188,7 +188,6 @@ article:hover {
     color: rgb(149, 252, 187);
     text-decoration: none;
 }
-
 .article-description {
     font-size: 1rem;
     color: #edeeef;
@@ -264,4 +263,29 @@ a:hover::after {
 
 .tooltip-container:hover .tooltip-text {
     visibility: visible;
+}
+
+/* --- Navigation Buttons --- */
+.page-navigator {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+.page-nav {
+    background-color: rgba(149, 252, 187, 0);
+    border-radius: 10px;
+    transition: background-color 0.5s;
+}
+.page-nav:hover {
+    background-color: rgba(149, 252, 187, 0.5);
+}
+
+.page-nav > img {
+    height: 50px;
+    width: 50px;
+}
+
+.hidden {
+    display: none;
 }
