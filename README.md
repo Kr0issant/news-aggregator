@@ -21,7 +21,7 @@ To protect the news API key, it is not exposed on the frontend. Instead, a light
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/news-aggregator.git](https://github.com/your-username/news-aggregator.git)
+   git clone [https://github.com/Kr0issant/news-aggregator.git](https://github.com/Kr0issant/news-aggregator.git)
    ```
 2. **Navigate to the server directory and install dependencies:**
    ```bash
