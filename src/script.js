@@ -67,6 +67,7 @@ fetch("http://localhost:3000/api")
 function submit() {
     event.preventDefault();
     container.innerHTML = "";
+    nextPageBtn.classList.add("hidden"); prevPageBtn.classList.add("hidden");
 
     let queries = { "apikey": apiKey, "max": resultsNum.value, "lang": "en", "page": page };
     let endpoint = category.value === "All" ? "search" : "top-headlines";
@@ -103,7 +104,6 @@ function submit() {
         .then(data => {
             articlesNum = data.totalArticles;
             if (articlesNum > 10) { nextPageBtn.classList.remove("hidden"); prevPageBtn.classList.remove("hidden"); }
-            else { nextPageBtn.classList.add("hidden"); prevPageBtn.classList.add("hidden"); }
 
             data.articles.forEach(article => {
                 element = article_template.replace("{TITLE}", article.title);
